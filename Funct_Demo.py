@@ -41,7 +41,7 @@ class Ui_MainWindow(object):
 
         ##Implementing Buttons
         self.Feed_Now.clicked.connect(Feed_Now)
-        self.Feed_In_30.clicked.connect(Feed_Later(30))
+        self.Feed_In_30.clicked.connect(lambda: Feed_Later(30))
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
