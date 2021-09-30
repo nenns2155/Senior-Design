@@ -16,8 +16,39 @@ def TEST():
         i=i+1
     GPIO.cleanup()
 
+def Feed_Now():
+    import time
+    import RPi.GPIO as GPIO
+
+    pin = 36
+    GPIO.setmode(GPIO.BOARD)
+    GPIO.setup(pin,GPIO.OUT) #Motor high low
+
+    GPIO.output(pin,1)
+    time.sleep(5)
+    GPIO.output(pin,0)
+    
+    GPIO.cleanup()
+
+def Feed_Later(Delay):
+    import time
+    import RPi.GPIO as GPIO
+
+    pin = 36
+    GPIO.setmode(GPIO.BOARD)
+    GPIO.setup(pin,GPIO.OUT) #Motor high low
+
+    time.sleep(Delay)
+    GPIO.output(pin,1)
+    time.sleep(5)
+    GPIO.output(pin,0)
+        
+    GPIO.cleanup()
+
 if __name__ == "__main__":
     TEST()
+
+
 
 # def motor(feedt):
 #     starttime = time.time()

@@ -10,6 +10,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
+from DEV1 import Feed_Now, Feed_Later
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -37,6 +38,11 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+
+        ##Implementing Buttons
+        self.Feed_Now.clicked(Feed_Now())
+        self.Feed_In_30.clicked(Feed_Later(30))
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
