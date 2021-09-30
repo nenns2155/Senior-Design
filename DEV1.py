@@ -1,7 +1,7 @@
 import time
 import RPi.GPIO as GPIO
 
-pin = 32
+pin = 36
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(pin,GPIO.OUT) #Motor high low
 #
@@ -9,8 +9,15 @@ GPIO.setup(pin,GPIO.OUT) #Motor high low
 #
 
 ### DEV
-GPIO.output(pin,True)
 
+i=0
+while i<=10:
+	GPIO.output(pin,1)
+	time.sleep(.5)
+	GPIO.output(pin,0)
+	time.sleep(.5)
+	i=i+1
+GPIO.cleanup()
 
 
 
