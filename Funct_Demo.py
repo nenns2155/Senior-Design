@@ -67,12 +67,13 @@ if __name__ == "__main__":
     MainWindow.show()
 
     def update_voltage():
-            ##read in pin voltages.
-            MainWindow.Feed_Now.setText("update")
+        ##read in pin voltages.
+        ui.Feed_Now.setText("update")
 
     timer = QtCore.QTimer()
     timer.timeout.connect(update_voltage)
     timer.start(10000)
+
 
 
     sys.exit(app.exec_())
