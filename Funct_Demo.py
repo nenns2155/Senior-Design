@@ -49,9 +49,6 @@ class Ui_MainWindow(object):
         self.Feed_Now.clicked.connect(Feed_Now)
         self.Feed_In_30.clicked.connect(lambda: Feed_Later(30))
 
-        def update_voltage():
-            ##read in pin voltages.
-            self.Feed_Now.setText("update")
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
@@ -69,7 +66,9 @@ if __name__ == "__main__":
     ui.setupUi(MainWindow)
     MainWindow.show()
 
-    
+    def update_voltage():
+            ##read in pin voltages.
+            MainWindow.Feed_Now.setText("update")
 
     timer = QtCore.QTimer()
     timer.timeout.connect(update_voltage)
