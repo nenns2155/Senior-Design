@@ -9,7 +9,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-from DEV1 import Feed_Now, Feed_Later, update_voltage
+from DEV1 import Feed_Now, Feed_Later
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -48,6 +48,10 @@ class Ui_MainWindow(object):
         ##Implementing Buttons
         self.Feed_Now.clicked.connect(Feed_Now)
         self.Feed_In_30.clicked.connect(lambda: Feed_Later(30))
+
+        def update_voltage():
+            ##read in pin voltages.
+            self.Feed_Now.setText("update")
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate

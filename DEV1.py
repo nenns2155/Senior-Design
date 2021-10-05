@@ -1,7 +1,5 @@
 ### DEV
-def update_voltage():
-        ##read in pin voltages.
-        Ui_MainWindow.Feed_Now.setText("update")
+
 
 def TEST():
     import time
