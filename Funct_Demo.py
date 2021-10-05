@@ -68,7 +68,7 @@ if __name__ == "__main__":
     
 
     timer = QtCore.QTimer()
-    timer.timeoutlconnect(update_voltage)
+    timer.timeout.connect(update_voltage)
     timer.start(10000)
 
 
