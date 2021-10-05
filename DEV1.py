@@ -1,4 +1,8 @@
 ### DEV
+def update_voltage():
+        ##read in pin voltages.
+        ui.Feed_Now.setText("update")
+
 def TEST():
     import time
     import RPi.GPIO as GPIO

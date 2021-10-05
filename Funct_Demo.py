@@ -9,27 +9,33 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-from DEV1 import Feed_Now, Feed_Later
+from DEV1 import Feed_Now, Feed_Later, update_voltage
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(480, 320)
+
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
+
         self.Feed_Now = QtWidgets.QPushButton(self.centralwidget)
         self.Feed_Now.setGeometry(QtCore.QRect(60, 40, 131, 81))
         self.Feed_Now.setObjectName("Feed_Now")
+
         self.Feed_In_30 = QtWidgets.QPushButton(self.centralwidget)
         self.Feed_In_30.setGeometry(QtCore.QRect(250, 40, 131, 81))
         self.Feed_In_30.setObjectName("Feed_In_30")
+
         self.Check_Weight = QtWidgets.QPushButton(self.centralwidget)
         self.Check_Weight.setGeometry(QtCore.QRect(80, 160, 301, 51))
         self.Check_Weight.setObjectName("Check_Weight")
+
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 480, 26))
         self.menubar.setObjectName("menubar")
+
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
@@ -58,4 +64,12 @@ if __name__ == "__main__":
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
     MainWindow.show()
+
+    
+
+    timer = QtCore.QTimer()
+    timer.timeoutlconnect(update_voltage)
+    timer.start(10000)
+
+
     sys.exit(app.exec_())
