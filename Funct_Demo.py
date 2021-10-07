@@ -9,7 +9,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-from DEV1 import Feed_Now, Feed_Later
+from DEV1 import Feed_Now, Feed_Later, setTime
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -74,6 +74,6 @@ if __name__ == "__main__":
     timer.timeout.connect(update_voltage)
     timer.start(10000)
 
-
+    setTime("print('hello')")
 
     sys.exit(app.exec_())
