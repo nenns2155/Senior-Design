@@ -51,9 +51,6 @@ try:
 except (KeyboardInterrupt, SystemExit):
     print('Bye :)')
 
-finally:
-    GPIO.cleanup()
-
 def read_weight():
     try:
         while True:
