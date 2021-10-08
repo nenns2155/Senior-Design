@@ -1,3 +1,4 @@
+#!/usr/bin/env python2.7
 ### DEV
 
 
@@ -48,6 +49,8 @@ def Feed_Later(Delay):
     GPIO.cleanup()
 
 def setTime(jobString):
+    import sys
+    sys.path.append('/home/pi/.local/lib/python2.7/site-packages')
     from crontab import CronTab
     cron = CronTab(user = True)
     job = cron.new(command = jobString)
