@@ -56,7 +56,7 @@ try:
     print('Current weight on the scale in grams is: ')
     while True:
         print(hx._read(), 'g')
-        sleep(.1)
+        time.sleep(.1)
 
 except (KeyboardInterrupt, SystemExit):
     print('Bye :)')
