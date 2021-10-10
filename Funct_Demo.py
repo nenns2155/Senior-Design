@@ -82,14 +82,14 @@ def read_weight():
     while True:
         reading = hx.get_weight_mean(10) 
         count =+ 1
-        if count > 20:
-            ui.Check_Weight.setText("Weight Timeout")
-        elif reading > 10000:
-            pass
-        elif reading < 0:
-            pass
-        else:    
-            ui.Check_Weight.setText(str(reading))
+        # if count > 20:
+        #     ui.Check_Weight.setText("Weight Timeout")
+        # elif reading > 10000:
+        #     pass
+        # elif reading < 0:
+        #     pass
+        # else:    
+        ui.Check_Weight.setText(str(reading))
 
     return
 
