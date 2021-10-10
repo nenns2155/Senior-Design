@@ -11,7 +11,7 @@ from hx711 import HX711  # import the class HX711
 motor = 38
 dout=36
 sck=35
-GPIO.cleanup
+GPIO.cleanup()
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(motor,GPIO.OUT) #Motor high low
 
