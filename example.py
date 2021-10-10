@@ -64,6 +64,8 @@ try:
             continue
         elif count == 10:
             print("Average of the last 10 readings:", sum/10 )
+            count=0
+            sum=0
         elif reading < 0:
             lastreading = reading
             continue
