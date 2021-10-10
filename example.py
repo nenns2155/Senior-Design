@@ -55,11 +55,15 @@ try:
     # input('Press Enter to begin reading')
     # print('Current weight on the scale in grams is: ')
     lastreading = hx._read()
+    count = 0
+    sum = 0
     while True:
         reading = hx._read()
         if reading == -1:
             lastreading = reading
             continue
+        elif count == 10:
+            print("Average of the last 10 readings:", sum/10 )
         elif reading < 0:
             lastreading = reading
             continue
@@ -67,13 +71,14 @@ try:
             lastreading = reading
             continue
         elif abs(lastreading/reading) > 1.25 or abs(lastreading/reading) < .75:
-            #print(abs(lastreading/reading))
             lastreading = reading
             continue
         else:
+            sum = sum + reading
+            count = count + 1
             lastreading = reading
-            print(reading)
         time.sleep(.1)
+    
 
 except (KeyboardInterrupt, SystemExit):
     print('Bye :)')
