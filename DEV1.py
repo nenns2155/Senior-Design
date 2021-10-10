@@ -1,6 +1,4 @@
-#!/usr/bin/env python2.7
-### DEV
-
+motor = 38
 
 def TEST():
     import time
