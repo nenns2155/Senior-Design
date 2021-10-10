@@ -67,7 +67,7 @@ try:
             lastreading = reading
             continue
         elif abs(lastreading/reading) > 1.25 or abs(lastreading/reading) < .75:
-            print(abs(lastreading/reading))
+            #print(abs(lastreading/reading))
             lastreading = reading
             continue
         else:
