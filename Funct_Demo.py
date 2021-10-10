@@ -11,6 +11,7 @@ from hx711 import HX711  # import the class HX711
 motor = 38
 dout=36
 sck=35
+GPIO.cleanup
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(motor,GPIO.OUT) #Motor high low
 
@@ -74,11 +75,11 @@ except (KeyboardInterrupt, SystemExit):
 def read_weight():
     GPIO.setmode(GPIO.BOARD)
     sum=0
-    for i in range(10):
-        sum = sum + hx._read()
-        sleep(.1)
+    # for i in range(10):
+    #     sum = sum + hx.get_weight_mean(10)
+    #     sleep(.1)
     
-    ui.Check_Weight.setText(str(sum/10))
+    ui.Check_Weight.setText(str(hx.get_weight_mean(10)))
     return
 
     
@@ -146,7 +147,5 @@ if __name__ == "__main__":
     # timer = QtCore.QTimer()
     # timer.timeout.connect()
     # timer.start(10000)
-
-    setTime("print('hello')")
 
     sys.exit(app.exec_())
