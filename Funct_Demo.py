@@ -26,10 +26,7 @@ sys.path.append('/home/pi/.local/lib/python2.7/site-packages')
 
 def read_weight():
     try:
-        GPIO.setmode(GPIO.BCM)  # set GPIO pin mode to BCM numbering
-        # Create an object hx which represents your real hx711 chip
-        # Required input parameters are only 'dout_pin' and 'pd_sck_pin'
-        hx = HX711(dout_pin=16, pd_sck_pin=19)
+        hx = HX711(dout_pin=36, pd_sck_pin=35)
 
         lastreading = hx._read()
         count = 0
