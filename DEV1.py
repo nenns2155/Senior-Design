@@ -1,15 +1,8 @@
-### DEV
-def update_voltage():
-        ##read in pin voltages.
-        ui.Feed_Now.setText("update")
+motor = 38
 
 def TEST():
     import time
     import RPi.GPIO as GPIO
-
-    pin = 36
-    GPIO.setmode(GPIO.BOARD)
-    GPIO.setup(pin,GPIO.OUT) #Motor high low
 
     i=0
     while i<=10:
@@ -23,24 +16,16 @@ def TEST():
 def Feed_Now():
     import time
     import RPi.GPIO as GPIO
-
-    pin = 36
-    GPIO.setmode(GPIO.BOARD)
-    GPIO.setup(pin,GPIO.OUT) #Motor high low
-
-    GPIO.output(pin,1)
+    
+    GPIO.output(motor,1)
     time.sleep(5)
-    GPIO.output(pin,0)
+    GPIO.output(motor,0)
     
     GPIO.cleanup()
 
 def Feed_Later(Delay):
     import time
     import RPi.GPIO as GPIO
-
-    pin = 36
-    GPIO.setmode(GPIO.BOARD)
-    GPIO.setup(pin,GPIO.OUT) #Motor high low
 
     time.sleep(Delay)
     GPIO.output(pin,1)
@@ -50,7 +35,12 @@ def Feed_Later(Delay):
     GPIO.cleanup()
 
 def setTime(jobString):
+    
+    import sys
+    sys.path.append('/home/pi/.local/lib/python2.7/site-packages')
+    
     from crontab import CronTab
+    
     cron = CronTab(user = True)
     job = cron.new(command = jobString)
     d = input("Enter the day of the week to feed (0-6 starting with Sunday being 0):")
@@ -59,7 +49,7 @@ def setTime(jobString):
     job.minute.on(minut)
     job.hour.on(h)
     job.dow.every(d)
-
+    
 if __name__ == "__main__":
     TEST()
 
