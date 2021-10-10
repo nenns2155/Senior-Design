@@ -45,29 +45,29 @@ try:
 
     # In order to calculate the conversion ratio to some units, in my case I want grams,
     # you must have known weight.
-    input('Put known weight on the scale and then press Enter')
-    reading = hx.get_data_mean()
-    if reading:
-        print('Mean value from HX711 subtracted by offset:', reading)
-        known_weight_grams = input(
-            'Write how many grams it was and press Enter: ')
-        try:
-            value = float(known_weight_grams)
-            print(value, 'grams')
-        except ValueError:
-            print('Expected integer or float and I have got:',
-                    known_weight_grams)
+    # input('Put known weight on the scale and then press Enter')
+    # reading = hx.get_data_mean()
+    # if reading:
+    #     print('Mean value from HX711 subtracted by offset:', reading)
+    #     known_weight_grams = input(
+    #         'Write how many grams it was and press Enter: ')
+    #     try:
+    #         value = float(known_weight_grams)
+    #         print(value, 'grams')
+    #     except ValueError:
+    #         print('Expected integer or float and I have got:',
+    #                 known_weight_grams)
 
         # set scale ratio for particular channel and gain which is
         # used to calculate the conversion to units. Required argument is only
         # scale ratio. Without arguments 'channel' and 'gain_A' it sets
         # the ratio for current channel and gain.
-        ratio = reading / value  # calculate the ratio for channel A and gain 128
-        hx.set_scale_ratio(ratio)  # set ratio for current channel
-        print('Ratio is set.')
-    else:
-        raise ValueError(
-            'Cannot calculate mean value. Try debug mode. Variable reading:', reading)
+        # ratio = reading / value  # calculate the ratio for channel A and gain 128
+    hx.set_scale_ratio(1)  # set ratio for current channel
+        # print('Ratio is set.')
+    # else:
+    #     raise ValueError(
+    #         'Cannot calculate mean value. Try debug mode. Variable reading:', reading)
 
 except (KeyboardInterrupt, SystemExit):
     print('Bye :)')
@@ -78,8 +78,15 @@ def read_weight():
     # for i in range(10):
     #     sum = sum + hx.get_weight_mean(10)
     #     sleep(.1)
-    
-    ui.Check_Weight.setText(str(hx.get_weight_mean(10)))
+    while True:
+        reading = hx.get_weight_mean(10) 
+
+        if reading > 10000:
+            pass
+        elif reading < 0:
+            pass
+        else:    
+            ui.Check_Weight.setText(str(reading))
     return
 
     
