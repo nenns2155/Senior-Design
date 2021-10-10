@@ -54,6 +54,7 @@ try:
     print("Now, I will read data in infinite loop. To exit press 'CTRL + C'")
     input('Press Enter to begin reading')
     print('Current weight on the scale in grams is: ')
+    lastreading = hx.read()
     while True:
         reading = hx._read()
         if reading == -1:
@@ -62,8 +63,11 @@ try:
             continue
         elif reading == False:
             continue
+        elif abs(lastreading/reading) > .1:
+            continue
         else:
              print(reading)
+        lastreading = reading
         time.sleep(.1)
 
 except (KeyboardInterrupt, SystemExit):
