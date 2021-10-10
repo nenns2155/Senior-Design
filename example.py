@@ -63,11 +63,11 @@ try:
             continue
         elif reading == False:
             continue
-        # elif abs(lastreading/reading) > .1:
-        #     continue
+        elif abs(lastreading/reading) > 1.1 or abs(lastreading/reading) < .9:
+            continue
         else:
-             #print(reading)
-             print(lastreading/reading)
+             print(reading)
+            #  print(lastreading/reading)
         lastreading = reading
         time.sleep(.1)
 
