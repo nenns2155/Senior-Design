@@ -63,7 +63,7 @@ try:
             continue
         elif reading == False:
             continue
-        elif abs(lastreading/reading) > 1.1 or abs(lastreading/reading) < .9:
+        elif abs(lastreading/reading) > 1.25 or abs(lastreading/reading) < .75:
             continue
         else:
              print(reading)
