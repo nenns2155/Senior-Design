@@ -64,6 +64,7 @@ try:
             continue
         else:
              print(reading)
+        time.sleep(.1)
 
 except (KeyboardInterrupt, SystemExit):
     print('Bye :)')
