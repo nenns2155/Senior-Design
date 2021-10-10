@@ -6,10 +6,6 @@ def TEST():
     import time
     import RPi.GPIO as GPIO
 
-    pin = 36
-    GPIO.setmode(GPIO.BOARD)
-    GPIO.setup(pin,GPIO.OUT) #Motor high low
-
     i=0
     while i<=10:
         GPIO.output(pin,1)
@@ -22,24 +18,16 @@ def TEST():
 def Feed_Now():
     import time
     import RPi.GPIO as GPIO
-
-    pin = 36
-    GPIO.setmode(GPIO.BOARD)
-    GPIO.setup(pin,GPIO.OUT) #Motor high low
-
-    GPIO.output(pin,1)
+    
+    GPIO.output(motor,1)
     time.sleep(5)
-    GPIO.output(pin,0)
+    GPIO.output(motor,0)
     
     GPIO.cleanup()
 
 def Feed_Later(Delay):
     import time
     import RPi.GPIO as GPIO
-
-    pin = 36
-    GPIO.setmode(GPIO.BOARD)
-    GPIO.setup(pin,GPIO.OUT) #Motor high low
 
     time.sleep(Delay)
     GPIO.output(pin,1)
