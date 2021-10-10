@@ -76,7 +76,7 @@ def read_weight():
     hx = HX711(dout_pin=dout, pd_sck_pin=sck)
     sum=0
     for i in range(10):
-        sum = sum + hx.get_last_raw_data()
+        sum = sum + hx._read()
         sleep(.1)
     
     ui.Check_Weight.setText(str(sum/10))
