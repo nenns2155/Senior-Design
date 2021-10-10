@@ -57,11 +57,11 @@ try:
     while True:
         reading = hx._read()
         if reading == -1:
-            pass
+            continue
         elif reading << 0:
-            pass
+            continue
         elif reading == False:
-            pass
+            continue
         else:
              print(reading)
 
