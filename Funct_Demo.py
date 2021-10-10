@@ -117,7 +117,7 @@ class Ui_MainWindow(object):
 
 
         ##Implementing Buttons
-        self.Feed_Now.clicked.connect(Feed_Now())
+        self.Feed_Now.clicked.connect(lambda: Feed_Now())
         self.Feed_In_30.clicked.connect(lambda: Feed_Later(30))
         self.Check_Weight.clicked.connect(lambda: read_weight())
 
