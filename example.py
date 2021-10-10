@@ -58,7 +58,7 @@ try:
         reading = hx._read()
         if reading == -1:
             continue
-        elif reading << 0:
+        elif reading < 0:
             continue
         elif reading == False:
             continue
