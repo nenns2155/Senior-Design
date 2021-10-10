@@ -58,18 +58,21 @@ try:
     while True:
         reading = hx._read()
         if reading == -1:
+            lastreading = reading
             continue
         elif reading < 0:
+            lastreading = reading
             continue
         elif reading == False:
+            lastreading = reading
             continue
         elif abs(lastreading/reading) > 1.25 or abs(lastreading/reading) < .75:
             print(abs(lastreading/reading))
+            lastreading = reading
             continue
         else:
-             print(reading)
-             
-        lastreading = reading
+            lastreading = reading
+            print(reading)
         time.sleep(.1)
 
 except (KeyboardInterrupt, SystemExit):
