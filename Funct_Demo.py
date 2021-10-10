@@ -73,8 +73,9 @@ except (KeyboardInterrupt, SystemExit):
 def read_weight():
     GPIO.setmode(GPIO.BOARD)
     hx = HX711(dout_pin=dout, pd_sck_pin=sck)
+    sum=0
     for i in range(10):
-        i = i + hx.get_weight_mean(10)
+        sum = sum + hx.get_weight_mean(10)
         ui.Check_Weight.setText(str(i/10))
     return
 
