@@ -443,7 +443,7 @@ class HX711:
             data_list.append(self._read())
         data_mean = False
         if readings > 2 and self._data_filter:
-            filtered_data = self._data_filter(data_list)
+            filtered_data = data_list # = self._data_filter(data_list)
             if not filtered_data:
                 return False
             if self._debug_mode:
