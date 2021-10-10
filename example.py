@@ -64,10 +64,11 @@ try:
         elif reading == False:
             continue
         elif abs(lastreading/reading) > 1.25 or abs(lastreading/reading) < .75:
+            print(abs(lastreading/reading))
             continue
         else:
              print(reading)
-            #  print(lastreading/reading)
+             
         lastreading = reading
         time.sleep(.1)
 
