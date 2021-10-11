@@ -10,7 +10,6 @@ def Read_Voltage(samples):
         sum = 0
         while True:
             reading = hx._read()
-            print(reading)
             if reading == -1:
                 lastreading = reading
                 pass
@@ -67,7 +66,7 @@ if __name__ == "__main__":
     from hx711 import HX711
     import time
     while True:
-        print(Read_Voltage())
+        print(Read_Voltage(10))
     
 
 
