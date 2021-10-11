@@ -2,7 +2,7 @@ motor = 38
 
 def TEST():
     import time
-    import RPi.GPIO as GPIO
+    #import RPi.GPIO as GPIO
 
     i=0
     while i<=10:
