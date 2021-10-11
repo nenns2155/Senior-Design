@@ -15,8 +15,8 @@ from DEV1 import Feed_Now, Feed_Later, setTime
 
 
 motor = 38
-dout=36
-sck=35
+dout=36 #16
+sck=35 #19
 GPIO.cleanup()
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(motor,GPIO.OUT) #Motor high low
@@ -86,9 +86,5 @@ if __name__ == "__main__":
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
     MainWindow.show()
-
-    # timer = QtCore.QTimer()
-    # timer.timeout.connect()
-    # timer.start(10000)
 
     sys.exit(app.exec_())

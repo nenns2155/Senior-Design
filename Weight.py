@@ -1,9 +1,9 @@
 ##Imports???
 
-def Read_Voltage(samples,sck,dout):
+def Read_Voltage(samples):
     try:
         GPIO.setmode(GPIO.BCM)  # set GPIO pin mode to BCM numbering
-        hx = HX711(dout_pin=dout, pd_sck_pin=sck)
+        hx = HX711(dout_pin=16, pd_sck_pin=19)
 
         lastreading = hx._read()
         count = 0
@@ -33,7 +33,7 @@ def Read_Voltage(samples,sck,dout):
         print('Bye :)')
 
 def Voltage_to_Weight(voltage):
-    
+
     A = 1
     B = 2
     C = 3
@@ -49,9 +49,10 @@ def Calibration():
 
     for i in range(0, 42, 2):
         i=i/4
-
+        input("Press enter when {} lbs are on the scale.".format(i))
         weight.append(i)
-        voltage.append(i**5) #Read_Voltage())
+        voltage.append(Read_Voltage(20)))
+
 
     [A,B,C] = np.polyfit(weight, voltage, 2)
 
