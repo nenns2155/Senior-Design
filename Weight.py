@@ -67,8 +67,10 @@ if __name__ == "__main__":
     import RPi.GPIO as GPIO
     from hx711 import HX711
     import time
-    while True:
-        print(Read_Voltage(10))
+
+    Calibration()
+    # while True:
+    #     print(Read_Voltage(10))
     
 
 
