@@ -25,6 +25,7 @@ def Read_Voltage(samples):
             else:
                 sum = sum + reading
                 count = count + 1
+                print(count)
             
             lastreading = reading    
             time.sleep(.1)
