@@ -15,7 +15,7 @@ def Read_Voltage(samples):
                 lastreading = reading
                 pass
             elif count == samples:
-                return Voltage_to_Weight(sum/samples)
+                return sum/samples #Voltage_to_Weight(sum/samples)
             elif reading < 0:
                 pass
             elif reading == False:
@@ -37,8 +37,8 @@ def Read_Voltage(samples):
 def Voltage_to_Weight(voltage):
 
     A = 1
-    B = 2
-    C = 3
+    B = 1
+    C = 1
 
     return A*voltage**2 + B*voltage + C
 
@@ -67,6 +67,8 @@ if __name__ == "__main__":
     from hx711 import HX711
     import time
     Calibration()
+    
+
 
 
 
