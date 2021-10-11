@@ -51,7 +51,7 @@ def Calibration():
         i=i/4
         input("Press enter when {} lbs are on the scale.".format(i))
         weight.append(i)
-        voltage.append(Read_Voltage(20)))
+        voltage.append(Read_Voltage(20))
 
 
     [A,B,C] = np.polyfit(weight, voltage, 2)
