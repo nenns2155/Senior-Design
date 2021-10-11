@@ -70,7 +70,7 @@ if __name__ == "__main__":
 
     # Calibration()
     while True:
-        print(Read_Voltage(10))
+        print(Read_Voltage(1))
     
 
 
