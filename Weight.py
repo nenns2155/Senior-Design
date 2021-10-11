@@ -8,9 +8,9 @@ def Read_Voltage(samples):
         lastreading = hx._read()
         count = 0
         sum = 0
-        print(count)
         while True:
             reading = hx._read()
+            print(reading)
             if reading == -1:
                 lastreading = reading
                 pass
@@ -24,8 +24,8 @@ def Read_Voltage(samples):
                 pass
             else:
                 sum = sum + reading
+                count = count + 1
             
-            count = count + 1
             lastreading = reading    
             time.sleep(.1)
     
