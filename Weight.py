@@ -24,7 +24,6 @@ def Read_Voltage(samples):
             else:
                 sum = sum + reading
                 count = count + 1
-                print(count)
             
             lastreading = reading    
             
@@ -39,7 +38,7 @@ def Voltage_to_Weight(voltage):
     B = 194733.675
     C = 256951.0917
 
-    return A*voltage**2 + B*voltage + C
+    return A*(voltage**2) + B*voltage + C
 
 def Calibration():
 
