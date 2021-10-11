@@ -28,7 +28,7 @@ def Read_Voltage(samples):
                 print(count)
             
             lastreading = reading    
-            time.sleep(.1)
+            
     
 
     except (KeyboardInterrupt, SystemExit):
