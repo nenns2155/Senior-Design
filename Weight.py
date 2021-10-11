@@ -63,6 +63,7 @@ def Calibration():
 if __name__ == "__main__":
     import RPi.GPIO as GPIO
     from hx711 import HX711
+    import time
     Calibration()
 
 
