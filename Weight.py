@@ -61,6 +61,7 @@ def Calibration():
     print('C equals:', C)
 
 if __name__ == "__main__":
+    import RPi.GPIO as GPIO
     Calibration()
 
 
