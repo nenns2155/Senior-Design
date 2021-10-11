@@ -38,7 +38,7 @@ def Voltage_to_Weight(voltage):
     B = 2
     C = 3
 
-    return A*voltage^2 + B*voltage + C
+    return A*voltage**2 + B*voltage + C
 
 def Calibration():
 
