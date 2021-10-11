@@ -14,7 +14,7 @@ def Read_Voltage(samples):
                 lastreading = reading
                 pass
             elif count == samples:
-                return Voltage_to_Weight(sum/samples)
+                return sum/samples
             elif reading < 0:
                 pass
             elif reading == False:
