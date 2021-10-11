@@ -52,7 +52,7 @@ def Calibration():
         input("Press enter when {} lbs are on the scale.".format(i))
         weight.append(i)
         voltagepoint = Read_Voltage(20)
-        voltage.append()
+        voltage.append(voltagepoint)
         print("Weight equals:", i)
         print("Voltage equals:",voltagepoint)
 
