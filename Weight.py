@@ -3,8 +3,8 @@ import RPi.GPIO as GPIO
 
 def Read_Voltage(samples):
     try:
-        GPIO.setmode(GPIO.BCM)  # set GPIO pin mode to BCM numbering
-        hx = HX711(dout_pin=16, pd_sck_pin=19)
+          # set GPIO pin mode to BCM numbering
+        hx = HX711(dout_pin=36, pd_sck_pin=35)
 
         lastreading = hx._read()
         count = 0
