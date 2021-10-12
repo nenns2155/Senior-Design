@@ -67,7 +67,7 @@ class Ui_MainWindow(object):
         ##Implementing Buttons
         self.Feed_Now.clicked.connect(lambda: Feed_Now())
         self.Feed_In_30.clicked.connect(lambda: setTime())
-        self.Check_Weight.clicked.connect(self.Check_Weight.setText(str(Read_Voltage(1))))
+        self.Check_Weight.clicked.connect(self.Check_Weight.setText(Read_Voltage(1)))
         self.Calibration.clicked.connect(lambda: Calibration())
 
 
