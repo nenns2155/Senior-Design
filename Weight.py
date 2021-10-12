@@ -10,12 +10,11 @@ def Read_Voltage(samples):
         sum = 0
         while True:
             reading = hx._read()
-            print(reading)
             if reading == -1:
                 lastreading = reading
                 pass
             elif count == samples:
-                return sum/samples #Voltage_to_Weight(sum/samples)
+                return Voltage_to_Weight(sum/samples)
             elif reading < 0:
                 pass
             elif reading == False:
@@ -25,7 +24,6 @@ def Read_Voltage(samples):
             else:
                 sum = sum + reading
                 count = count + 1
-                print(count)
             
             lastreading = reading    
             
@@ -36,11 +34,11 @@ def Read_Voltage(samples):
 
 def Voltage_to_Weight(voltage):
 
-    A = 1
-    B = 1
-    C = 1
+    A = 190033
+    B = 262378.645
+    C = 256951.0917
 
-    return A*voltage**2 + B*voltage + C
+    return (voltage - B)/A
 
 def Calibration():
 
@@ -53,7 +51,10 @@ def Calibration():
         i=i/4
         input("Press enter when {} lbs are on the scale.".format(i))
         weight.append(i)
-        voltage.append(Read_Voltage(20))
+        voltagepoint = Read_Voltage(20)
+        voltage.append(voltagepoint)
+        print("Weight equals:", i)
+        print("Voltage equals:",voltagepoint)
 
 
     [A,B,C] = np.polyfit(weight, voltage, 2)
@@ -66,7 +67,10 @@ if __name__ == "__main__":
     import RPi.GPIO as GPIO
     from hx711 import HX711
     import time
-    Calibration()
+
+    # Calibration()
+    while True:
+        print(Read_Voltage(1))
     
 
 
