@@ -1,5 +1,6 @@
 ##Imports???
 import RPi.GPIO as GPIO 
+from hx711 import HX711  # import the class HX711
 
 def Read_Voltage(samples):
     try:
