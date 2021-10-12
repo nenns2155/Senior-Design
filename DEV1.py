@@ -34,7 +34,7 @@ def Feed_Later(Delay):
         
     GPIO.cleanup()
 
-def setTime(jobString):
+def setTime():
     
     import sys
     sys.path.append('/home/pi/.local/lib/python2.7/site-packages')
@@ -42,13 +42,14 @@ def setTime(jobString):
     from crontab import CronTab
     
     cron = CronTab(user = True)
-    job = cron.new(command = jobString)
+    job = cron.new(command = "python3 ~/crontest/printtest.py >> ~/d.txt")
     d = input("Enter the day of the week to feed (0-6 starting with Sunday being 0):")
     h = input("Enter the hour to feed (0-23 starting with 0 at midnight):")
     minut = input("Enter the minute to feed (0-59):")
     job.minute.on(minut)
     job.hour.on(h)
     job.dow.every(d)
+    cron.write()
     
 if __name__ == "__main__":
     TEST()
