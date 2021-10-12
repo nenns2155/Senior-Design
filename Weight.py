@@ -1,4 +1,5 @@
 ##Imports???
+import RPi.GPIO as GPIO 
 
 def Read_Voltage(samples):
     try:
