@@ -42,7 +42,7 @@ def setTime():
     from crontab import CronTab
     
     cron = CronTab(user = True)
-    job = cron.new(command = "python3 ~/crontest/printtest.py >> ~/d.txt")
+    job = cron.new(command = "python3 ~/Senior_Design/Background_Feed_Now")
     d = input("Enter the day of the week to feed (0-6 starting with Sunday being 0):")
     h = input("Enter the hour to feed (0-23 starting with 0 at midnight):")
     minut = input("Enter the minute to feed (0-59):")
