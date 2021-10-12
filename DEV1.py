@@ -16,6 +16,8 @@ def TEST():
 def Feed_Now():
     import time
     import RPi.GPIO as GPIO
+
+    GPIO.setup(38,GPIO.OUT) #Motor high low
     
     GPIO.output(motor,1)
     time.sleep(5)
