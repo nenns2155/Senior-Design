@@ -21,7 +21,7 @@ def Feed_Now():
     GPIO.setup(38,GPIO.OUT) #Motor high low
     
     GPIO.output(motor,1)
-    time.sleep(5)
+    time.sleep(10)
     GPIO.output(motor,0)
     
     GPIO.cleanup()
