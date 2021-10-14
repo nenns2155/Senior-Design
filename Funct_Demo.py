@@ -20,6 +20,8 @@ sck=35 #19
 GPIO.cleanup()
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(motor,GPIO.OUT) #Motor high low
+GPIO.setup(32, GPIO.OUT)
+GPIO.output(32,1)
 
 sys.path.append('/home/pi/.local/lib/python2.7/site-packages')
 
