@@ -17,7 +17,6 @@ from DEV1 import Feed_Now, Feed_Later, setTime
 motor = 38
 dout=36 #16
 sck=35 #19
-GPIO.cleanup()
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(motor,GPIO.OUT) #Motor high low
 GPIO.setup(32, GPIO.OUT)
